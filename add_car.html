@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sell Your Car — AutoLuxe</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+ 
+<header>
+    <a href="index.html" class="logo">
+        <div class="logo-icon">🚗</div>
+        <span class="logo-text">Auto<span>Luxe</span></span>
+    </a>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="products.html">Browse Cars</a>
+        <a href="add_car.html" class="active">Sell</a>
+        <a href="login.html">Login</a>
+        <a href="register.html" class="btn-nav">Register</a>
+    </nav>
+</header>
+ 
+<div class="add-car-page">
+    <div class="page-header">
+        <div class="eyebrow">Sell on AutoLuxe</div>
+        <h1>List Your Car</h1>
+        <p style="color: var(--text-muted); margin-top: 8px; font-size: 0.9rem;">Fill in the details below to create your listing.</p>
+    </div>
+ 
+    <form id="carForm">
+        <div class="form-section">
+            <div class="form-section-title">🚗 Car Details</div>
+ 
+            <div class="form-group">
+                <label for="title">Car Name / Title *</label>
+                <input type="text" id="title" name="title" placeholder="e.g. Volkswagen Golf 7 2019" required>
+            </div>
+ 
+            <div class="form-group">
+                <label for="price">Price (DT) *</label>
+                <input type="number" id="price" name="price" placeholder="e.g. 42000" required min="0">
+            </div>
+ 
+            <div class="form-group">
+                <label for="image">Image URL</label>
+                <input type="url" id="image" name="image" placeholder="https://example.com/car.jpg">
+            </div>
+ 
+            <div class="image-preview-wrap" id="imagePreview">
+                <div class="image-placeholder">
+                    <div style="font-size: 2rem; margin-bottom: 8px;">🖼</div>
+                    <div>Image preview will appear here</div>
+                </div>
+            </div>
+        </div>
+ 
+        <div id="alert-msg"></div>
+ 
+        <button type="submit" class="btn-primary" id="submitBtn">
+            🚀 Publish Listing
+        </button>
+    </form>
+</div>
+ 
+<footer>
+    <p>© 2025 AutoLuxe Tunisia. All rights reserved.</p>
+</footer>
+ 
+<div class="toast-container" id="toasts"></div>
+<script src="script.js"></script>
+<script>
+document.getElementById('image').addEventListener('input', function() {
+    const wrap = document.getElementById('imagePreview');
+    const url = this.value.trim();
+    if (url) {
+        wrap.innerHTML = '<img src="' + url + '" alt="Preview" onerror="this.parentElement.innerHTML=\'<div class=\\\"image-placeholder\\\"><div style=\\\"font-size:2rem;margin-bottom:8px\\\">❌</div><div>Could not load image</div></div>\'">';
+    } else {
+        wrap.innerHTML = '<div class="image-placeholder"><div style="font-size: 2rem; margin-bottom: 8px;">🖼</div><div>Image preview will appear here</div></div>';
+    }
+});
+</script>
+</body>
+</html>

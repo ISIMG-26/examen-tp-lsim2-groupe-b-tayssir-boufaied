@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browse Cars — AutoLuxe</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .filter-bar {
+            background: var(--dark-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 20px 28px;
+            margin-bottom: 36px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+        .filter-bar .search-wrap {
+            flex: 1;
+            min-width: 220px;
+            margin: 0;
+            box-shadow: none;
+        }
+        .filter-count {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            white-space: nowrap;
+        }
+        .filter-count strong { color: var(--amber); }
+    </style>
+</head>
+<body>
+ 
+<header>
+    <a href="index.html" class="logo">
+        <div class="logo-icon">🚗</div>
+        <span class="logo-text">Auto<span>Luxe</span></span>
+    </a>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="products.html" class="active">Browse Cars</a>
+        <a href="add_car.html">Sell</a>
+        <a href="login.html">Login</a>
+        <a href="register.html" class="btn-nav">Register</a>
+    </nav>
+</header>
+ 
+<div class="section" style="padding-top: 48px;">
+    <div class="section-header">
+        <div>
+            <div style="font-size: 0.75rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--amber); margin-bottom: 8px;">Marketplace</div>
+            <h1 class="section-title">All <span>Cars</span></h1>
+        </div>
+        <a href="add_car.html" style="background: var(--amber); color: var(--black); padding: 12px 24px; border-radius: 10px; text-decoration: none; font-weight: 700; font-size: 0.875rem; transition: var(--transition);" onmouseover="this.style.background='#f5c460'" onmouseout="this.style.background='#e8a020'">+ Sell Your Car</a>
+    </div>
+ 
+    <div class="filter-bar">
+        <div class="search-wrap" style="flex:1; min-width: 200px; margin: 0; box-shadow: none;">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+            <input type="text" id="search" placeholder="Search by name, brand, model...">
+        </div>
+        <div class="filter-count">Showing <strong id="car-count">—</strong> cars</div>
+    </div>
+ 
+    <div id="car-list" class="grid">
+        <div class="skeleton"><div class="skeleton-img"></div><div class="skeleton-body"><div class="skeleton-line w-40"></div><div class="skeleton-line w-80"></div><div class="skeleton-line w-60"></div></div></div>
+        <div class="skeleton"><div class="skeleton-img"></div><div class="skeleton-body"><div class="skeleton-line w-40"></div><div class="skeleton-line w-80"></div><div class="skeleton-line w-60"></div></div></div>
+        <div class="skeleton"><div class="skeleton-img"></div><div class="skeleton-body"><div class="skeleton-line w-40"></div><div class="skeleton-line w-80"></div><div class="skeleton-line w-60"></div></div></div>
+        <div class="skeleton"><div class="skeleton-img"></div><div class="skeleton-body"><div class="skeleton-line w-40"></div><div class="skeleton-line w-80"></div><div class="skeleton-line w-60"></div></div></div>
+    </div>
+</div>
+ 
+<footer>
+    <p>© 2025 AutoLuxe Tunisia. All rights reserved.</p>
+</footer>
+ 
+<div class="toast-container" id="toasts"></div>
+<script src="script.js"></script>
+</body>
+</html>
